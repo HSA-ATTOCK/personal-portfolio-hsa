@@ -87,3 +87,58 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
       console.error(error);
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sliderTrack = document.querySelector(".work__slider-track");
+  const prevBtn = document.querySelector(".work__nav--prev");
+  const nextBtn = document.querySelector(".work__nav--next");
+  const workItems = document.querySelectorAll(".work__img");
+  const itemWidth = workItems[0].offsetWidth + 24; // width + gap
+  let currentPosition = 0;
+  const maxPosition = -(
+    workItems.length * itemWidth -
+    sliderTrack.parentElement.offsetWidth
+  );
+
+  function updateButtons() {
+    // Show/hide prev button
+    if (currentPosition >= 0) {
+      prevBtn.classList.remove("visible");
+    } else {
+      prevBtn.classList.add("visible");
+    }
+
+    // Show/hide next button
+    if (currentPosition <= maxPosition) {
+      nextBtn.classList.remove("visible");
+    } else {
+      nextBtn.classList.add("visible");
+    }
+  }
+
+  prevBtn.addEventListener("click", () => {
+    currentPosition = Math.min(currentPosition + itemWidth * 2, 0);
+    sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+    updateButtons();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentPosition = Math.max(currentPosition - itemWidth * 2, maxPosition);
+    sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+    updateButtons();
+  });
+
+  // Initial check
+  updateButtons();
+
+  // Handle window resize
+  window.addEventListener("resize", () => {
+    const newMaxPosition = -(
+      workItems.length * itemWidth -
+      sliderTrack.parentElement.offsetWidth
+    );
+    currentPosition = Math.max(currentPosition, newMaxPosition);
+    sliderTrack.style.transform = `translateX(${currentPosition}px)`;
+    updateButtons();
+  });
+});
