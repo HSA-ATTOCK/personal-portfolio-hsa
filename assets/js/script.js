@@ -1,3 +1,18 @@
+// Scroll to top on page load
+(function () {
+  // Prevent scroll restoration on page reload
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+
+  // Scroll to top immediately when page loads
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "instant", // or 'auto' if 'instant' isn't supported
+    });
+  };
+
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
   const toggle = document.getElementById(toggleId),
@@ -117,13 +132,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   prevBtn.addEventListener("click", () => {
-    currentPosition = Math.min(currentPosition + itemWidth * 2, 0);
+    currentPosition = Math.min(currentPosition + itemWidth * 1.5, 0);
     sliderTrack.style.transform = `translateX(${currentPosition}px)`;
     updateButtons();
   });
 
   nextBtn.addEventListener("click", () => {
-    currentPosition = Math.max(currentPosition - itemWidth * 2, maxPosition);
+    currentPosition = Math.max(currentPosition - itemWidth * 1.5, maxPosition);
     sliderTrack.style.transform = `translateX(${currentPosition}px)`;
     updateButtons();
   });
