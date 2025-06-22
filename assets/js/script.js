@@ -1,5 +1,5 @@
 // Scroll to top on page load
-(function () {
+/*(function () {
   // Prevent scroll restoration on page reload
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
@@ -11,7 +11,7 @@
       top: 0,
       behavior: "instant", // or 'auto' if 'instant' isn't supported
     });
-  };
+  };*/
 
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
