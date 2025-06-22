@@ -1,17 +1,17 @@
 // Scroll to top on page load
-(function () {
-  // Prevent scroll restoration on page reload
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
+// (function () {
+//   // Prevent scroll restoration on page reload
+//   if ("scrollRestoration" in history) {
+//     history.scrollRestoration = "manual";
+//   }
 
-  // Scroll to top immediately when page loads
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "instant", // or 'auto' if 'instant' isn't supported
-    });
-  };
+//   // Scroll to top immediately when page loads
+//   const scrollToTop = () => {
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "instant", // or 'auto' if 'instant' isn't supported
+//     });
+//   };
 
 /*===== MENU SHOW =====*/
 const showMenu = (toggleId, navId) => {
