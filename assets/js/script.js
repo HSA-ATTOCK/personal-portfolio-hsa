@@ -132,13 +132,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   prevBtn.addEventListener("click", () => {
-    currentPosition = Math.min(currentPosition + itemWidth * 1.5, 0);
+    currentPosition = Math.min(currentPosition + itemWidth * 1, 0);
     sliderTrack.style.transform = `translateX(${currentPosition}px)`;
     updateButtons();
   });
 
   nextBtn.addEventListener("click", () => {
-    currentPosition = Math.max(currentPosition - itemWidth * 1.5, maxPosition);
+    currentPosition = Math.max(currentPosition - itemWidth * 1, maxPosition);
     sliderTrack.style.transform = `translateX(${currentPosition}px)`;
     updateButtons();
   });
