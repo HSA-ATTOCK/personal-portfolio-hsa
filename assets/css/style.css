@@ -310,6 +310,9 @@ img {
 .skills__js {
   width: 90%;
 }
+.skills__react {
+  width: 70%;
+}
 .skills__node {
   width: 70%;
 }
