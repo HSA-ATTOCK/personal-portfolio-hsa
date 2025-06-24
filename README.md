@@ -6,7 +6,7 @@ This is a fully responsive personal portfolio website built with HTML, CSS, and 
 
 ##  Live Demo
 
-You can deploy this project using GitHub Pages, Vercel, or Netlify. Or serve it locally with Node.js (see below).
+[https](https://hsa-attock.github.io/personal-portfolio-hsa/)
 
 ## 📸 Preview
 
